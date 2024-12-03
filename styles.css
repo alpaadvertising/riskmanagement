@@ -7,11 +7,10 @@ body {
     padding: 0;
 }
 
-/* Container to center the chart */
+/* Container to center the table */
 .container {
     width: 80%;
     margin: 20px auto;
-    text-align: center;
 }
 
 /* Header styling */
@@ -30,9 +29,45 @@ header p {
     color: #666;
 }
 
-/* Canvas styling for the chart */
-#impactChart {
-    border: 2px solid #ddd;
+/* Styling for the table */
+.risk-table {
+    width: 100%;
+    border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.risk-table th, .risk-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.risk-table th {
+    background-color: #2F4F4F;
+    color: #fff;
+    font-size: 16px;
+}
+
+.risk-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.risk-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.risk-table td {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Styling for the severity column based on values */
+.risk-table td:nth-child(4) {
+    font-weight: bold;
+    color: #D2691E;
+}
+
+.risk-table td:nth-child(5) {
+    color: #4682B4;
 }
