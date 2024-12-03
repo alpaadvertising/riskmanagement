@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Chart - riskmanagement.com</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Impact Chart for Identified Risk Factors</h1>
+            <p>Visualize the severity and impact of identified risks to prioritize mitigation strategies.</p>
+        </header>
+
+        <canvas id="impactChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('impactChart').getContext('2d');
+
+        const data = {
+            labels: [
+                'System vulnerabilities',
+                'Weak password policies',
+                'Data leakage from third-party',
+                'Lack of encryption',
+                'Insider threats'
+            ],
+            datasets: [{
+                label: 'Risk Severity',
+                data: [20, 20, 15, 20, 12],
+                backgroundColor: ['#FF6347', '#FFA500', '#FFD700', '#32CD32', '#4682B4'],
+                borderColor: ['#D2691E', '#FF8C00', '#FFCD00', '#228B22', '#4169E1'],
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 25,
+                        ticks: {
+                            stepSize: 5
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                }
+            }
+        };
+
+        const impactChart = new Chart(ctx, config);
+    </script>
+</body>
+</html>
