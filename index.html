@@ -3,64 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Evaluation - riskmanagement.com</title>
+    <title>Impact Chart - riskmanagement.com</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Risk Evaluation and Prioritization</h1>
-            <p>Evaluate and prioritize risks in your IT systems to ensure proper management and mitigation strategies.</p>
+            <h1>Impact Chart for Identified Risk Factors</h1>
+            <p>This chart represents the severity of identified risks based on likelihood and impact.</p>
         </header>
 
-        <table class="risk-table">
-            <thead>
-                <tr>
-                    <th>Risk</th>
-                    <th>Likelihood (1-5)</th>
-                    <th>Impact (1-5)</th>
-                    <th>Severity (Likelihood x Impact)</th>
-                    <th>Mitigation Strategy</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>System vulnerabilities</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>20</td>
-                    <td>Regular patching, vulnerability scans</td>
-                </tr>
-                <tr>
-                    <td>Weak password policies</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>20</td>
-                    <td>Enforce strong password policies, MFA</td>
-                </tr>
-                <tr>
-                    <td>Data leakage from third-party</td>
-                    <td>3</td>
-                    <td>5</td>
-                    <td>15</td>
-                    <td>Third-party audits, secure APIs</td>
-                </tr>
-                <tr>
-                    <td>Lack of encryption</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>20</td>
-                    <td>End-to-end encryption</td>
-                </tr>
-                <tr>
-                    <td>Insider threats</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>12</td>
-                    <td>Least privilege access, monitoring</td>
-                </tr>
-            </tbody>
-        </table>
+        <canvas id="impactChart" width="600" height="400"></canvas>
     </div>
+
+    <script>
+        const ctx = document.getElementById('impactChart').getContext('2d');
+
+        const data = {
+            labels: [
+                'System Vulnerabilities',
+                'Weak Password Policies',
+                'Data Leakage from Third-Party',
+                'Lack of Encryption',
+                'Insider Threats'
+            ],
+            datasets: [{
+                label: 'Risk Severity',
+                data: [20, 20, 15, 20, 12], // Severity values
+                backgroundColor: [
+                    '#FF6347', // Tomato
+                    '#FFA500', // Orange
+                    '#FFD700', // Gold
+                    '#32CD32', // LimeGreen
+                    '#4682B4'  // SteelBlue
+                ],
+                borderColor: [
+                    '#D2691E', // Chocolate
+                    '#FF8C00', // DarkOrange
+                    '#FFCD00', // Goldenrod
+                    '#228B22', // ForestGreen
+                    '#4169E1'  // RoyalBlue
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 25,
+                        ticks: {
+                            stepSize: 5,
+                            font: {
+                                size: 18
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 16
+                            },
+                            padding: 10
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Risk Severity Impact Chart',
+                        font: {
+                            size: 22
+                        }
+                    }
+                }
+            }
+        };
+
+        const impactChart = new Chart(ctx, config);
+    </script>
 </body>
 </html>

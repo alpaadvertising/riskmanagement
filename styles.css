@@ -7,21 +7,23 @@ body {
     padding: 0;
 }
 
-/* Container to center the table */
+/* Container to center the chart */
 .container {
     width: 80%;
-    margin: 20px auto;
+    margin: 40px auto;
+    text-align: center;
 }
 
 /* Header styling */
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 header h1 {
     color: #2F4F4F;
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 header p {
@@ -29,45 +31,16 @@ header p {
     color: #666;
 }
 
-/* Styling for the table */
-.risk-table {
-    width: 100%;
-    border-collapse: collapse;
+/* Canvas styling for the chart */
+#impactChart {
+    border: 2px solid #ddd;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.risk-table th, .risk-table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-.risk-table th {
-    background-color: #2F4F4F;
-    color: #fff;
-    font-size: 16px;
-}
-
-.risk-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.risk-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-.risk-table td {
-    font-size: 14px;
-    color: #333;
-}
-
-/* Styling for the severity column based on values */
-.risk-table td:nth-child(4) {
-    font-weight: bold;
-    color: #D2691E;
-}
-
-.risk-table td:nth-child(5) {
-    color: #4682B4;
+/* Styling for the title and legend (Chart.js options) */
+canvas {
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
 }
