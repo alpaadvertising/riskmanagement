@@ -69,8 +69,9 @@
     /* Style for the legend */
     .legend {
       margin-top: 20px;
-      text-align: right; /* Align legend to the right */
-      float: right; /* Float the legend to the right */
+      text-align: left; /* Align legend to the left */
+      float: left; /* Float the legend to the left */
+      margin-left: 20px; /* Add margin to the left */
     }
 
     .legend-item {
@@ -106,7 +107,14 @@
 
     /* Style for the submitted by section */
     .submitted-by {
-      text-align: right;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Style for the evaluation section */
+    .evaluation {
+      display: flex;
+      justify-content: space-between;
       margin-top: 20px;
     }
   </style>
@@ -142,40 +150,44 @@
     </tr>
   </table>
 
-  <h2>Evaluation</h2>
+  <div class="evaluation">
+    <div>
+      <h2>Evaluation</h2>
 
-  <table id="prioritizeTable">
-    <tr>
-      <th>Risk</th>
-      <th>Likelihood</th>
-      <th>Impact</th>
-      <th>Priority</th>
-    </tr>
-    <tr>
-      <td>Legacy Windows Clients</td>
-      <td class="medium">Medium</td>
-      <td class="high">High</td>
-      <td class="high">High</td>
-    </tr>
-    <tr>
-      <td>Untrained Staff</td>
-      <td class="low">Low</td>
-      <td class="medium">Medium</td>
-      <td class="medium">Medium</td>
-    </tr>
-    <tr>
-      <td>No Antivirus Software</td>
-      <td class="medium">Medium</td>
-      <td class="high">High</td>
-      <td class="high">High</td>
-    </tr>
-  </table>
+      <table id="prioritizeTable">
+        <tr>
+          <th>Risk</th>
+          <th>Likelihood</th>
+          <th>Impact</th>
+          <th>Priority</th>
+        </tr>
+        <tr>
+          <td>Legacy Windows Clients</td>
+          <td class="medium">Medium</td>
+          <td class="high">High</td>
+          <td class="high">High</td>
+        </tr>
+        <tr>
+          <td>Untrained Staff</td>
+          <td class="low">Low</td>
+          <td class="medium">Medium</td>
+          <td class="medium">Medium</td>
+        </tr>
+        <tr>
+          <td>No Antivirus Software</td>
+          <td class="medium">Medium</td>
+          <td class="high">High</td>
+          <td class="high">High</td>
+        </tr>
+      </table>
+    </div>
 
-  <div class="legend">
-    <h3>Legend</h3>
-    <div class="legend-item" style="background-color: #ff0000;">High Risk - Represents a high likelihood of a significant impact.</div>
-    <div class="legend-item" style="background-color: #ffff00;">Medium Risk - Represents a moderate likelihood of a moderate impact.</div>
-    <div class="legend-item" style="background-color: #00ff00;">Low Risk - Represents a low likelihood of a minor impact.</div>
+    <div class="legend">
+      <h3>Legend</h3>
+      <div class="legend-item" style="background-color: #ff0000;">High Risk - Represents a high likelihood of a significant impact.</div>
+      <div class="legend-item" style="background-color: #ffff00;">Medium Risk - Represents a moderate likelihood of a moderate impact.</div>
+      <div class="legend-item" style="background-color: #00ff00;">Low Risk - Represents a low likelihood of a minor impact.</div>
+    </div>
   </div>
 
   <div class="submitted-by">
