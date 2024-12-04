@@ -14,7 +14,6 @@
     }
 
     table {
-      width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
     }
@@ -47,13 +46,36 @@
     .low {
       background-color: #00ff00; /* Green for Low */
     }
+
+    /* Style for the larger Impact Chart */
+    #impactChart {
+      width: 70%; /* Make the Impact Chart wider */
+    }
+
+    /* Style for the smaller Evaluate and Prioritize table */
+    #prioritizeTable {
+      width: 30%; /* Make the Evaluate and Prioritize table narrower */
+    }
+
+    /* Style for the legend */
+    .legend {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .legend-item {
+      display: inline-block;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
 
   <h1>Evaluate and Prioritize the Information Risk</h1>
 
-  <table>
+  <table id="prioritizeTable">
     <tr>
       <th>Risk</th>
       <th>Likelihood</th>
@@ -94,7 +116,7 @@
 
   <h2>Impact Chart for Identified Risk Factors</h2>
 
-  <table>
+  <table id="impactChart">
     <tr>
       <th>Risk Factor</th>
       <th>Impact Level</th>
@@ -132,6 +154,13 @@
       <td>Training programs, peer-review protocols</td>
     </tr>
   </table>
+
+  <div class="legend">
+    <h3>Legend</h3>
+    <div class="legend-item" style="background-color: #ff0000;">High Risk</div>
+    <div class="legend-item" style="background-color: #ffff00;">Medium Risk</div>
+    <div class="legend-item" style="background-color: #00ff00;">Low Risk</div>
+  </div>
 
 </body>
 </html>
