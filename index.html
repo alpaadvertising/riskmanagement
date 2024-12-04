@@ -50,11 +50,15 @@
     /* Style for the larger Impact Chart */
     #impactChart {
       width: 70%; /* Make the Impact Chart wider */
+      margin: 20px auto; /* Center the Impact Chart */
+      font-size: 18px; /* Increase font size for Impact Chart */
     }
 
     /* Style for the smaller Evaluate and Prioritize table */
     #prioritizeTable {
-      width: 30%; /* Make the Evaluate and Prioritize table narrower */
+      width: 25%; /* Make the Evaluate and Prioritize table narrower */
+      margin: 20px auto; /* Center the table */
+      font-size: 14px; /* Decrease font size for smaller table */
     }
 
     /* Style for the legend */
@@ -68,6 +72,11 @@
       margin: 5px;
       padding: 5px;
       border: 1px solid #ddd;
+    }
+
+    /* Light blue background for Impact Chart table */
+    #impactChart tr:nth-child(even) {
+      background-color: #e0ffff; /* Light blue */
     }
   </style>
 </head>
@@ -83,34 +92,22 @@
       <th>Priority</th>
     </tr>
     <tr>
-      <td>Unauthorized Access</td>
-      <td class="high">High</td>
-      <td class="high">Critical</td>
-      <td class="high">High</td>
-    </tr>
-    <tr>
-      <td>Data Loss</td>
+      <td>Legacy Windows Clients</td>
       <td class="medium">Medium</td>
       <td class="high">High</td>
       <td class="high">High</td>
     </tr>
     <tr>
-      <td>Security Vulnerabilities</td>
-      <td class="high">High</td>
-      <td class="high">High</td>
-      <td class="high">High</td>
-    </tr>
-    <tr>
-      <td>Third-party Integration Risks</td>
-      <td class="medium">Medium</td>
-      <td class="medium">Medium</td>
-      <td class="medium">Medium</td>
-    </tr>
-    <tr>
-      <td>Human Error</td>
+      <td>Untrained Staff</td>
       <td class="low">Low</td>
       <td class="medium">Medium</td>
-      <td class="low">Low</td>
+      <td class="medium">Medium</td>
+    </tr>
+    <tr>
+      <td>No Antivirus Software</td>
+      <td class="medium">Medium</td>
+      <td class="high">High</td>
+      <td class="high">High</td>
     </tr>
   </table>
 
@@ -124,34 +121,22 @@
       <th>Mitigation Measures</th>
     </tr>
     <tr>
-      <td>Unauthorized Access</td>
-      <td class="high">Critical</td>
+      <td>Legacy Windows Clients</td>
+      <td class="medium">Medium</td>
       <td class="high">High</td>
       <td>Multi-factor authentication, RBAC</td>
     </tr>
     <tr>
-      <td>Data Loss</td>
-      <td class="high">High</td>
+      <td>Untrained Staff</td>
+      <td class="low">Low</td>
       <td class="medium">Medium</td>
       <td>Daily backups, redundant storage</td>
     </tr>
     <tr>
-      <td>Security Vulnerabilities</td>
-      <td class="high">High</td>
+      <td>No Antivirus Software</td>
+      <td class="medium">Medium</td>
       <td class="high">High</td>
       <td>Penetration testing, timely updates</td>
-    </tr>
-    <tr>
-      <td>Third-party Integration Risks</td>
-      <td class="medium">Medium</td>
-      <td class="medium">Medium</td>
-      <td>Vet tools, sandbox testing environments</td>
-    </tr>
-    <tr>
-      <td>Human Error</td>
-      <td class="medium">Medium</td>
-      <td class="low">Low</td>
-      <td>Training programs, peer-review protocols</td>
     </tr>
   </table>
 
