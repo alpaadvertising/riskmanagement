@@ -75,8 +75,8 @@
     }
 
     .legend-item {
-      display: inline-block;
-      margin: 5px;
+      display: block; /* Arrange legend items in separate lines */
+      margin-bottom: 5px; /* Add margin between legend items */
       padding: 5px;
       border: 1px solid #ddd;
     }
@@ -109,13 +109,8 @@
     .submitted-by {
       text-align: center;
       margin-top: 20px;
-    }
-
-    /* Style for the evaluation section */
-    .evaluation {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
+      font-weight: bold; /* Make the font bold */
+      color: #ff0000; /* Red color for the name */
     }
   </style>
 </head>
@@ -150,7 +145,7 @@
     </tr>
   </table>
 
-  <div class="evaluation">
+  <div style="display: flex;">
     <div>
       <h2>Evaluation</h2>
 
